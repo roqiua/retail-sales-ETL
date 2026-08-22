@@ -1,0 +1,2126 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/20/2026 7:11:36 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-OMLTJQ15225"
+  DTS:CreatorName="WIN-OMLTJQ15225\Administrator"
+  DTS:DTSID="{BBA7CC0F-24B7-4CD9-A412-DA5DED707004}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Customers"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{F5DAA4A0-0F8E-48EE-B9A9-F0D2F3F68CC5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Customers"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{08EB6505-79AF-41B5-B742-B0555B26B34A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Customers"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Customers\Customers CSV"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Customers CSV"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Customers\Customers CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="{78594A6F-71FD-4AA3-A04C-A472C3189199}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Customers_CSV]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[CustomerID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].ExternalColumns[CustomerID]"
+                      length="50"
+                      lineageId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[CustomerID]"
+                      name="CustomerID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[Gender]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      length="50"
+                      lineageId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[Age]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      lineageId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].ExternalColumns[City]"
+                      length="50"
+                      lineageId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[Region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].ExternalColumns[Region]"
+                      length="50"
+                      lineageId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[CustomerSegment]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].ExternalColumns[CustomerSegment]"
+                      length="50"
+                      lineageId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[CustomerSegment]"
+                      name="CustomerSegment"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[SignUpDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].ExternalColumns[SignUpDate]"
+                      lineageId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[SignUpDate]"
+                      name="SignUpDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].ExternalColumns[CustomerID]"
+                      dataType="wstr"
+                      length="50"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="50"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      dataType="i2"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].ExternalColumns[Region]"
+                      dataType="wstr"
+                      length="50"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].ExternalColumns[CustomerSegment]"
+                      dataType="wstr"
+                      length="50"
+                      name="CustomerSegment" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].ExternalColumns[SignUpDate]"
+                      dataType="dbTimeStamp"
+                      name="SignUpDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Customers\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Customers\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Customers\Merge Join.Inputs[Merge Join Left Input].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="City"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Load Customers\Merge Join.Inputs[Merge Join Left Input].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerID"
+                      lineageId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\Load Customers\Merge Join.Inputs[Merge Join Left Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Gender"
+                      lineageId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Load Customers\Merge Join.Inputs[Merge Join Left Input].Columns[Age]"
+                      cachedDataType="i2"
+                      cachedName="Age"
+                      lineageId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\Load Customers\Merge Join.Inputs[Merge Join Left Input].Columns[CustomerSegment]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerSegment"
+                      lineageId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[CustomerSegment]" />
+                    <inputColumn
+                      refId="Package\Load Customers\Merge Join.Inputs[Merge Join Left Input].Columns[SignUpDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SignUpDate"
+                      lineageId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[SignUpDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load Customers\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Customers\Merge Join.Inputs[Merge Join Right Input].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="City"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Load Customers\Sort 1.Outputs[Sort Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Load Customers\Merge Join.Inputs[Merge Join Right Input].Columns[CityId]"
+                      cachedDataType="i4"
+                      cachedName="CityId"
+                      lineageId="Package\Load Customers\Sort 1.Outputs[Sort Output].Columns[CityId]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Customers\Merge Join.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[CustomerID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[CustomerID]"
+                      name="CustomerID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Customers\Merge Join.Inputs[Merge Join Left Input].Columns[CustomerID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[Gender]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[Gender]"
+                      name="Gender">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Customers\Merge Join.Inputs[Merge Join Left Input].Columns[Gender]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[Age]"
+                      dataType="i2"
+                      lineageId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[Age]"
+                      name="Age">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Customers\Merge Join.Inputs[Merge Join Left Input].Columns[Age]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[CityId]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[CityId]"
+                      name="CityId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Customers\Merge Join.Inputs[Merge Join Right Input].Columns[CityId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[CustomerSegment]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[CustomerSegment]"
+                      name="CustomerSegment">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Customers\Merge Join.Inputs[Merge Join Left Input].Columns[CustomerSegment]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[SignUpDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[SignUpDate]"
+                      name="SignUpDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Customers\Merge Join.Inputs[Merge Join Left Input].Columns[SignUpDate]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Customers\Merge Join 1"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Customers\Merge Join 1.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Customers\Merge Join 1.Inputs[Merge Join Left Input].Columns[CustomerSegment]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerSegment"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Load Customers\Sort 2.Outputs[Sort Output].Columns[CustomerSegment]" />
+                    <inputColumn
+                      refId="Package\Load Customers\Merge Join 1.Inputs[Merge Join Left Input].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerID"
+                      lineageId="Package\Load Customers\Sort 2.Outputs[Sort Output].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\Load Customers\Merge Join 1.Inputs[Merge Join Left Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Gender"
+                      lineageId="Package\Load Customers\Sort 2.Outputs[Sort Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Load Customers\Merge Join 1.Inputs[Merge Join Left Input].Columns[Age]"
+                      cachedDataType="i2"
+                      cachedName="Age"
+                      lineageId="Package\Load Customers\Sort 2.Outputs[Sort Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\Load Customers\Merge Join 1.Inputs[Merge Join Left Input].Columns[CityId]"
+                      cachedDataType="i4"
+                      cachedName="CityId"
+                      lineageId="Package\Load Customers\Sort 2.Outputs[Sort Output].Columns[CityId]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load Customers\Merge Join 1.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Customers\Merge Join 1.Inputs[Merge Join Right Input].Columns[CustomerSegment]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerSegment"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Load Customers\Sort 3.Outputs[Sort Output].Columns[CustomerSegment]" />
+                    <inputColumn
+                      refId="Package\Load Customers\Merge Join 1.Inputs[Merge Join Right Input].Columns[CustomerSegmentId]"
+                      cachedDataType="i4"
+                      cachedName="CustomerSegmentId"
+                      lineageId="Package\Load Customers\Sort 3.Outputs[Sort Output].Columns[CustomerSegmentId]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Customers\Merge Join 1.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers\Merge Join 1.Outputs[Merge Join Output].Columns[CustomerID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Customers\Merge Join 1.Outputs[Merge Join Output].Columns[CustomerID]"
+                      name="CustomerID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Customers\Merge Join 1.Inputs[Merge Join Left Input].Columns[CustomerID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Merge Join 1.Outputs[Merge Join Output].Columns[Gender]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Customers\Merge Join 1.Outputs[Merge Join Output].Columns[Gender]"
+                      name="Gender">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Customers\Merge Join 1.Inputs[Merge Join Left Input].Columns[Gender]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Merge Join 1.Outputs[Merge Join Output].Columns[Age]"
+                      dataType="i2"
+                      lineageId="Package\Load Customers\Merge Join 1.Outputs[Merge Join Output].Columns[Age]"
+                      name="Age">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Customers\Merge Join 1.Inputs[Merge Join Left Input].Columns[Age]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Merge Join 1.Outputs[Merge Join Output].Columns[CustomerSegmentId]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\Merge Join 1.Outputs[Merge Join Output].Columns[CustomerSegmentId]"
+                      name="CustomerSegmentId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Customers\Merge Join 1.Inputs[Merge Join Right Input].Columns[CustomerSegmentId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Merge Join 1.Outputs[Merge Join Output].Columns[CityId]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\Merge Join 1.Outputs[Merge Join Output].Columns[CityId]"
+                      name="CityId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Customers\Merge Join 1.Inputs[Merge Join Left Input].Columns[CityId]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Customers\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[tbl_cities]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Customers\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{64055C26-0F7A-414C-8282-DE2F96EF5C9D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN-OMLTJQ15225.RetailData_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[CityId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CityId]"
+                      lineageId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[CityId]"
+                      name="CityId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      length="50"
+                      lineageId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[RegionId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RegionId]"
+                      lineageId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[RegionId]"
+                      name="RegionId"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CityId]"
+                      dataType="i4"
+                      name="CityId" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RegionId]"
+                      dataType="i4"
+                      name="RegionId" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CityId]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CityId]"
+                      name="CityId" />
+                    <outputColumn
+                      refId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[City]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RegionId]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RegionId]"
+                      name="RegionId" />
+                    <outputColumn
+                      refId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Customers\OLE DB Source 1"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source 1"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[tbl_customer_segment]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Customers\OLE DB Source 1.Connections[OleDbConnection]"
+                  connectionManagerID="{64055C26-0F7A-414C-8282-DE2F96EF5C9D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN-OMLTJQ15225.RetailData_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CustomerSegmentId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[CustomerSegmentId]"
+                      lineageId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CustomerSegmentId]"
+                      name="CustomerSegmentId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CustomerSegment]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[CustomerSegment]"
+                      length="50"
+                      lineageId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CustomerSegment]"
+                      name="CustomerSegment"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[CustomerSegmentId]"
+                      dataType="i4"
+                      name="CustomerSegmentId" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[CustomerSegment]"
+                      dataType="wstr"
+                      length="50"
+                      name="CustomerSegment" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[CustomerSegmentId]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[CustomerSegmentId]"
+                      name="CustomerSegmentId" />
+                    <outputColumn
+                      refId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[CustomerSegment]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[CustomerSegment]"
+                      name="CustomerSegment" />
+                    <outputColumn
+                      refId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Customers\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Customers\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort.Inputs[Sort Input].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerID"
+                      lineageId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[CustomerID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort.Inputs[Sort Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Gender"
+                      lineageId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[Gender]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort.Inputs[Sort Input].Columns[Age]"
+                      cachedDataType="i2"
+                      cachedName="Age"
+                      lineageId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[Age]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort.Inputs[Sort Input].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="City"
+                      lineageId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[City]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort.Inputs[Sort Input].Columns[Region]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Region"
+                      lineageId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[Region]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort.Inputs[Sort Input].Columns[CustomerSegment]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerSegment"
+                      lineageId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[CustomerSegment]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort.Inputs[Sort Input].Columns[SignUpDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SignUpDate"
+                      lineageId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[SignUpDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Customers\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[CustomerID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[CustomerID]"
+                      name="CustomerID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[CustomerID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[Gender]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[Gender]"
+                      name="Gender">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[Gender]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[Age]"
+                      dataType="i2"
+                      lineageId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[Age]"
+                      name="Age">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[Age]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[City]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[City]"
+                      name="City"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[City]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[Region]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[Region]"
+                      name="Region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[Region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[CustomerSegment]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[CustomerSegment]"
+                      name="CustomerSegment">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[CustomerSegment]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[SignUpDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load Customers\Sort.Outputs[Sort Output].Columns[SignUpDate]"
+                      name="SignUpDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\Customers CSV.Outputs[Flat File Source Output].Columns[SignUpDate]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Customers\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Customers\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort 1.Inputs[Sort Input].Columns[CityId]"
+                      cachedDataType="i4"
+                      cachedName="CityId"
+                      lineageId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[CityId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort 1.Inputs[Sort Input].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="City"
+                      lineageId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort 1.Inputs[Sort Input].Columns[RegionId]"
+                      cachedDataType="i4"
+                      cachedName="RegionId"
+                      lineageId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[RegionId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Customers\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort 1.Outputs[Sort Output].Columns[CityId]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\Sort 1.Outputs[Sort Output].Columns[CityId]"
+                      name="CityId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[CityId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort 1.Outputs[Sort Output].Columns[City]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Customers\Sort 1.Outputs[Sort Output].Columns[City]"
+                      name="City"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort 1.Outputs[Sort Output].Columns[RegionId]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\Sort 1.Outputs[Sort Output].Columns[RegionId]"
+                      name="RegionId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[RegionId]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Customers\Sort 2"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Customers\Sort 2.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort 2.Inputs[Sort Input].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerID"
+                      lineageId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[CustomerID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort 2.Inputs[Sort Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Gender"
+                      lineageId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[Gender]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort 2.Inputs[Sort Input].Columns[Age]"
+                      cachedDataType="i2"
+                      cachedName="Age"
+                      lineageId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[Age]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort 2.Inputs[Sort Input].Columns[CityId]"
+                      cachedDataType="i4"
+                      cachedName="CityId"
+                      lineageId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[CityId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort 2.Inputs[Sort Input].Columns[CustomerSegment]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerSegment"
+                      lineageId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[CustomerSegment]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort 2.Inputs[Sort Input].Columns[SignUpDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SignUpDate"
+                      lineageId="Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[SignUpDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Customers\Sort 2.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort 2.Outputs[Sort Output].Columns[CustomerID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Customers\Sort 2.Outputs[Sort Output].Columns[CustomerID]"
+                      name="CustomerID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[CustomerID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort 2.Outputs[Sort Output].Columns[Gender]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Customers\Sort 2.Outputs[Sort Output].Columns[Gender]"
+                      name="Gender">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[Gender]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort 2.Outputs[Sort Output].Columns[Age]"
+                      dataType="i2"
+                      lineageId="Package\Load Customers\Sort 2.Outputs[Sort Output].Columns[Age]"
+                      name="Age">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[Age]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort 2.Outputs[Sort Output].Columns[CityId]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\Sort 2.Outputs[Sort Output].Columns[CityId]"
+                      name="CityId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[CityId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort 2.Outputs[Sort Output].Columns[CustomerSegment]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Customers\Sort 2.Outputs[Sort Output].Columns[CustomerSegment]"
+                      name="CustomerSegment"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[CustomerSegment]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort 2.Outputs[Sort Output].Columns[SignUpDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load Customers\Sort 2.Outputs[Sort Output].Columns[SignUpDate]"
+                      name="SignUpDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\Merge Join.Outputs[Merge Join Output].Columns[SignUpDate]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Customers\Sort 3"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 3"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Customers\Sort 3.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort 3.Inputs[Sort Input].Columns[CustomerSegmentId]"
+                      cachedDataType="i4"
+                      cachedName="CustomerSegmentId"
+                      lineageId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CustomerSegmentId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customers\Sort 3.Inputs[Sort Input].Columns[CustomerSegment]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerSegment"
+                      lineageId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CustomerSegment]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Customers\Sort 3.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort 3.Outputs[Sort Output].Columns[CustomerSegmentId]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\Sort 3.Outputs[Sort Output].Columns[CustomerSegmentId]"
+                      name="CustomerSegmentId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CustomerSegmentId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers\Sort 3.Outputs[Sort Output].Columns[CustomerSegment]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Customers\Sort 3.Outputs[Sort Output].Columns[CustomerSegment]"
+                      name="CustomerSegment"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CustomerSegment]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Customers\SQL Server Destination"
+              componentClassID="Microsoft.SQLServerDestination"
+              contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="SQL Server Destination"
+              name="SQL Server Destination"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.String"
+                  description="The name of the database object to copy data into."
+                  expressionType="Notify"
+                  name="BulkInsertTableName">[tbl_customers]</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any constraints on the destination object are checked during the data copy operation. Corresponds to the bulk insert CHECK_CONSTRAINTS option."
+                  name="BulkInsertCheckConstraints">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the first row to copy. Corresponds to the bulk insert FIRSTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertFirstRow">-1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any insert triggers defined on the destination object will execute during the data copy. Corresponds to the bulk insert FIRE_TRIGGERS option."
+                  name="BulkInsertFireTriggers">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Corresponds to the bulk insert KEEPIDENTITY option."
+                  name="BulkInsertKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null copied to the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="BulkInsertKeepNulls">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the last row to copy. Corresponds to the bulk insert LASTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertLastRow">-1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of syntax errors and compilation errors that can occur before the data copy operation is canceled. Each row that cannot be copied is ignored and counted as one error. Corresponds to the bulk insert MAXERRORS option."
+                  name="BulkInsertMaxErrors">-1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies how the data to be copied is sorted. Corresponds to the bulk insert ORDER option."
+                  expressionType="Notify"
+                  name="BulkInsertOrder"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that a table-level lock is acquired for the duration of the data copy operation. Corresponds to the bulk insert TABLOCK option."
+                  name="BulkInsertTablock">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies in seconds the amount of time the SQL Destination adapter will wait before terminating if there is no data available for insertion.  A timeout value of 0 means the SQL Destination adapter will not time out."
+                  expressionType="Notify"
+                  name="Timeout">30</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion."
+                  name="MaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Customers\SQL Server Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{64055C26-0F7A-414C-8282-DE2F96EF5C9D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN-OMLTJQ15225.RetailData_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Customers\SQL Server Destination.Inputs[SQL Server Destination Input]"
+                  hasSideEffects="true"
+                  name="SQL Server Destination Input">
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[CustomerID]"
+                      dataType="wstr"
+                      length="50"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="50"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Age]"
+                      dataType="i2"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[CustomerSegmentId]"
+                      dataType="i4"
+                      name="CustomerSegmentId" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[CityId]"
+                      dataType="i4"
+                      name="CityId" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Customers.Paths[Flat File Source Output]"
+              endId="Package\Load Customers\Sort.Inputs[Sort Input]"
+              name="Flat File Source Output"
+              startId="Package\Load Customers\Customers CSV.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Load Customers.Paths[Merge Join Output]"
+              endId="Package\Load Customers\Sort 2.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\Load Customers\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Load Customers.Paths[Merge Join Output1]"
+              endId="Package\Load Customers\SQL Server Destination.Inputs[SQL Server Destination Input]"
+              name="Merge Join Output"
+              startId="Package\Load Customers\Merge Join 1.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Load Customers.Paths[OLE DB Source Output]"
+              endId="Package\Load Customers\Sort 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Customers\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load Customers.Paths[OLE DB Source Output1]"
+              endId="Package\Load Customers\Sort 3.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Customers\OLE DB Source 1.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load Customers.Paths[Sort Output]"
+              endId="Package\Load Customers\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Load Customers\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Load Customers.Paths[Sort Output1]"
+              endId="Package\Load Customers\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Load Customers\Sort 1.Outputs[Sort Output]" />
+            <path
+              refId="Package\Load Customers.Paths[Sort Output2]"
+              endId="Package\Load Customers\Merge Join 1.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Load Customers\Sort 2.Outputs[Sort Output]" />
+            <path
+              refId="Package\Load Customers.Paths[Sort Output3]"
+              endId="Package\Load Customers\Merge Join 1.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Load Customers\Sort 3.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Load Customers"
+          TopLeft="63,28" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Customers">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Load Customers\Customers CSV"
+          TopLeft="43,19" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Load Customers\Sort"
+          TopLeft="62,119" />
+        <EdgeLayout
+          Id="Package\Load Customers.Paths[Flat File Source Output]"
+          TopLeft="114.75,61">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Load Customers\OLE DB Source"
+          TopLeft="234,20" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Load Customers\Sort 1"
+          TopLeft="205,118" />
+        <EdgeLayout
+          Id="Package\Load Customers.Paths[OLE DB Source Output]"
+          TopLeft="309,62">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-50.5,56"
+              Start="0,0"
+              End="-50.5,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24"
+                    Point2="0,28"
+                    Point3="-4,28" />
+                  <mssgle:LineSegment
+                    End="-46.5,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-46.5,28"
+                    Point2="-50.5,28"
+                    Point3="-50.5,32" />
+                  <mssgle:LineSegment
+                    End="-50.5,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load Customers\Merge Join"
+          TopLeft="118,190" />
+        <EdgeLayout
+          Id="Package\Load Customers.Paths[Sort Output]"
+          TopLeft="111,161">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.6666666666667,29"
+              Start="0,0"
+              End="51.6666666666667,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.1884498480243" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.1884498480243"
+                    Point2="0,17.1884498480243"
+                    Point3="4,17.1884498480243" />
+                  <mssgle:LineSegment
+                    End="47.6666666666667,17.1884498480243" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.6666666666667,17.1884498480243"
+                    Point2="51.6666666666667,17.1884498480243"
+                    Point3="51.6666666666667,21.1884498480243" />
+                  <mssgle:LineSegment
+                    End="51.6666666666667,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Customers.Paths[Sort Output1]"
+          TopLeft="258.5,160">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-55.1666666666667,30"
+              Start="0,0"
+              End="-55.1666666666667,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.7811550151976" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.7811550151976"
+                    Point2="0,17.7811550151976"
+                    Point3="-4,17.7811550151976" />
+                  <mssgle:LineSegment
+                    End="-51.1666666666667,17.7811550151976" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-51.1666666666667,17.7811550151976"
+                    Point2="-55.1666666666667,17.7811550151976"
+                    Point3="-55.1666666666667,21.7811550151976" />
+                  <mssgle:LineSegment
+                    End="-55.1666666666667,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Load Customers\Sort 2"
+          TopLeft="135,280" />
+        <EdgeLayout
+          Id="Package\Load Customers.Paths[Merge Join Output]"
+          TopLeft="185.75,232">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Load Customers\OLE DB Source 1"
+          TopLeft="303,193" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Load Customers\Sort 3"
+          TopLeft="335,276" />
+        <EdgeLayout
+          Id="Package\Load Customers.Paths[OLE DB Source Output1]"
+          TopLeft="385.5,235">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Load Customers\Merge Join 1"
+          TopLeft="223,361" />
+        <EdgeLayout
+          Id="Package\Load Customers.Paths[Sort Output2]"
+          TopLeft="188.5,322">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="104,39"
+              Start="0,0"
+              End="104,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="4,19.5" />
+                  <mssgle:LineSegment
+                    End="100,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="100,19.5"
+                    Point2="104,19.5"
+                    Point3="104,23.5" />
+                  <mssgle:LineSegment
+                    End="104,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Customers.Paths[Sort Output3]"
+          TopLeft="388.5,318">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-74.1666666666667,43"
+              Start="0,0"
+              End="-74.1666666666667,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5064011379801" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5064011379801"
+                    Point2="0,25.5064011379801"
+                    Point3="-4,25.5064011379801" />
+                  <mssgle:LineSegment
+                    End="-70.1666666666667,25.5064011379801" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-70.1666666666667,25.5064011379801"
+                    Point2="-74.1666666666667,25.5064011379801"
+                    Point3="-74.1666666666667,29.5064011379801" />
+                  <mssgle:LineSegment
+                    End="-74.1666666666667,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Load Customers\SQL Server Destination"
+          TopLeft="184,453" />
+        <EdgeLayout
+          Id="Package\Load Customers.Paths[Merge Join Output1]"
+          TopLeft="292.5,403">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.5,50"
+              Start="0,0"
+              End="-14.5,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="-4,25" />
+                  <mssgle:LineSegment
+                    End="-10.5,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.5,25"
+                    Point2="-14.5,25"
+                    Point3="-14.5,29" />
+                  <mssgle:LineSegment
+                    End="-14.5,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Customers\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Customers\OLE DB Source 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Customers\SQL Server Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="OrderDetails_CSV"
+  DTS:DTSID="{0359D0E0-D23E-48EA-8B9F-57D85929C3FC}"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="1033"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:ColumnNamesInFirstDataRow="True"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x003C_none_x003E_"
+      DTS:CodePage="65001"
+      DTS:ConnectionString="D:\python\ETL\Retail Data\order_details.csv">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="OrderID"
+          DTS:DTSID="{35A0B6A9-784F-4A71-9D83-23433938B942}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="ProductID"
+          DTS:DTSID="{73645FB2-5FED-4721-BBEF-B91E49BB0FDA}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:DataType="3"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Quantity"
+          DTS:DTSID="{35A22422-2520-448C-8BCD-44D99612B410}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:DataType="4"
+          DTS:TextQualified="True"
+          DTS:ObjectName="UnitCost"
+          DTS:DTSID="{0FC6709F-59C2-4E66-B138-FD76BC236B70}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:DataType="4"
+          DTS:TextQualified="True"
+          DTS:ObjectName="UnitPrice"
+          DTS:DTSID="{7109F145-95CF-4A51-87A3-7DC997497E37}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:DataType="4"
+          DTS:TextQualified="True"
+          DTS:ObjectName="DiscountRate"
+          DTS:DTSID="{47456067-7CEC-4686-B99A-174C9D5218F5}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:DataType="11"
+          DTS:TextQualified="True"
+          DTS:ObjectName="IsReturned"
+          DTS:DTSID="{5072B488-EE6C-471C-89A5-006FA14856AC}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:DataType="135"
+          DTS:TextQualified="True"
+          DTS:ObjectName="ReturnDate"
+          DTS:DTSID="{FB988CE6-2BED-4177-A76C-0F9E67701EFF}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:DataType="135"
+          DTS:TextQualified="True"
+          DTS:ObjectName="ReturnTime"
+          DTS:DTSID="{3628CFB7-C906-48AA-BB5C-0CCC5AC591FD}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="ReturnReason"
+          DTS:DTSID="{CFBC3807-5603-407F-9E68-5673A7AA89C3}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
